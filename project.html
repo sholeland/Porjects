@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number0" name="" id="year" />
+    <button onclick="calLeepYear()">Show</button>
+    <div id="leep"></div>
+
+    <script>
+        function calLeepYear() {
+            let year = document.getElementById("year").value;
+            if(year % 4 == 0){
+                if(year % 100 == 0){
+                    if(year % 400 == 0){
+                        document.getElementById("leep").innerHTML = year + " is a leep year and senchuri leep";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

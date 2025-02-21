@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            box-shadow: 25px;
+        }
+
+        body {
+            text-align: center;
+            width: 100wh;
+            height: 100vh;
+            padding: 10px;
+        }
+
+        span {
+            font-size: 200px;
+            font-weight: bold;
+            margin: 25px;
+            
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        .btn:hover {
+            background-color: #4CAF50;
+            color: #FFF;
+
+        }
+    </style>
+</head>
+
+<body>
+    <span id="value">0</span><br>
+    <button class="btn Decrease">Decrease</button>
+    <button class="btn Reset">Reset</button>
+    <button class="btn Increase">Increase</button>
+
+    <script>
+        let count = 0;
+
+        let value = document.querySelector("#value");
+        let btns = document.querySelectorAll(".btn");
+
+
+        btns.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                if (e.currentTarget.classList.contains('Decrease')) {
+                    count--;
+
+                }
+                else if (e.currentTarget.classList.contains('Increase')) {
+                    count++;
+
+                }
+                else {
+                    count = 0;
+
+                }
+                if (count < 0) {
+                    value.style.color = 'red';
+                    document.body.style.background = 'greenyellow';
+                }
+                else if (count > 0) {
+                    value.style.color = 'green';
+                    document.body.style.background = 'skyblue';
+                }
+                else {
+                    value.style.color = 'black';
+                    document.body.style.background = 'white';
+                }
+                value.textContent = count;
+            })
+        })
+
+    </script>
+</body>
+
+</html>

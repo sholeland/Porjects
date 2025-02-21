@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            padding: 15px;
+            border: 1px solid rgb(111, 155, 54);
+            width: fit-content;
+            justify-content: center;
+            border-radius: 15px;
+            margin: 30% auto;
+            box-shadow: 5px  5px  rgb(111, 155, 54);
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: none;
+            border: 2px solid black;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <input type="text">
+        <input type="button" value="click me" id="btn">
+    </div>
+    <script>
+        var btn = document.querySelector('#btn');
+        var box = document.querySelector('.box');
+        var input = document.querySelector('input');
+        btn.addEventListener('click', function () {
+            box.style.backgroundColor = input.value;
+            document.body.style.background = `${input.value}`;
+        });
+        btn.addEventListener('dblclick', function () {
+            box.style.backgroundColor = "white";
+            document.body.style.background = "white";
+        });
+
+    </script>
+</body>
+
+</html>
